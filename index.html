@@ -148,6 +148,20 @@ a{color:var(--cranberry)}
 @media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:180px}}
 @media (max-width:480px){.gallery{grid-template-columns:1fr;grid-auto-rows:230px}.shot.big,.shot.wide{grid-column:auto;grid-row:auto}}
 
+/* FOOD */
+.dishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.dish{border-radius:18px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;min-width:0;transition:transform .2s}
+.dish:hover{transform:translateY(-4px)}
+.dish .ph{aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.dish img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.dish:hover img{transform:scale(1.05)}
+.dish .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.dish .meta{display:flex;flex-wrap:wrap;gap:6px}
+.dish .meta span{font:500 .68rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cranberry);border:1px solid color-mix(in srgb,var(--cranberry) 35%,transparent);border-radius:999px;padding:5px 9px}
+.dish h3 small{display:block;margin-top:4px;font:500 .9rem/1.3 var(--body);color:var(--muted)}
+.dish p{color:var(--muted);font-size:.95rem}
+.food-note{margin-top:20px;color:var(--muted);font-size:.95rem}
+
 /* SAMBORONDON */
 .sambo{background:var(--surface)}
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
@@ -222,6 +236,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
     </a>
     <ul class="links" id="links">
       <li><a href="#ecuador">Ecuador</a></li>
+      <li><a href="#food">Food</a></li>
       <li><a href="#samborondon">Samborondón</a></li>
       <li><a href="#club">Our club</a></li>
       <li><a href="#together">Partnership</a></li>
@@ -327,10 +342,71 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
     </div>
   </section>
 
+  <section id="food" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">04 · Our food</p>
+        <h2>A taste of Ecuador</h2>
+        <p class="lede">Our food changes from region to region, but plantain, yuca, seafood and corn are everywhere. Here are a few dishes we grew up with.</p>
+      </div>
+      <div class="dishes">
+        <article class="dish reveal" style="--i:0">
+          <div class="ph"><img src="images/food/encebollado.jpg" width="900" height="674" alt="A bowl of encebollado fish soup with pickled red onion and cilantro" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Breakfast</span></div>
+            <h3 lang="es">Encebollado<small lang="en">Fish and onion soup</small></h3>
+            <p>Albacore tuna, yuca and pickled red onion in a warm, tangy broth. Topped with chifles (plantain chips) and popcorn, it is the classic weekend breakfast on the coast.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:1">
+          <div class="ph"><img src="images/food/bolon.jpg" width="900" height="430" alt="A bolón de verde with a fried egg and stew" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Breakfast</span></div>
+            <h3 lang="es">Bolón de verde<small lang="en">Green plantain ball</small></h3>
+            <p>Green plantain fried and mashed into a ball with cheese or chicharrón (pork cracklings). Usually eaten with a fried egg and a cup of coffee.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:2">
+          <div class="ph"><img src="images/food/ceviche.jpg" width="900" height="900" alt="Ecuadorian shrimp ceviche in a tangy broth with avocado" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Lunch</span></div>
+            <h3 lang="es">Ceviche de camarón<small lang="en">Shrimp ceviche</small></h3>
+            <p>Shrimp in a cold broth of lime, orange and tomato with red onion and cilantro. In Ecuador it comes with popcorn or chifles on the side.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:0">
+          <div class="ph"><img src="images/food/seco.jpg" width="900" height="675" alt="Seco de chivo stew with yellow rice and fried sweet plantain" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Lunch</span></div>
+            <h3 lang="es">Seco de chivo<small lang="en">Goat stew</small></h3>
+            <p>Goat slowly stewed with naranjilla, herbs and spices. Served with yellow rice, avocado and maduro (fried sweet plantain).</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:1">
+          <div class="ph"><img src="images/food/pan-de-yuca.jpg" width="900" height="495" alt="Freshly baked pan de yuca cheese breads" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Snack</span><span>Anytime</span></div>
+            <h3 lang="es">Pan de yuca<small lang="en">Cassava cheese bread</small></h3>
+            <p>Soft little breads made with yuca (cassava) starch and fresh cheese. Best eaten warm with a cold glass of drinkable yogurt.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:2">
+          <div class="ph"><img src="images/food/colada-morada.jpg" width="900" height="592" alt="A glass of colada morada next to the fruits and spices used to make it" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Tradition</span><span>2 November</span></div>
+            <h3 lang="es">Colada morada<small lang="en">With guaguas de pan</small></h3>
+            <p>A thick, spiced purple drink made with black corn flour, blackberries, mortiño and pineapple. Served with guaguas de pan (bread dolls) for Día de los Difuntos, the Day of the Dead.</p>
+          </div>
+        </article>
+      </div>
+      <p class="food-note reveal">¡Buen provecho! · Enjoy your meal!</p>
+    </div>
+  </section>
+
   <section class="sambo" id="samborondon">
     <div class="wrap split">
       <div class="reveal">
-        <p class="eyebrow">04 · Our home</p>
+        <p class="eyebrow">05 · Our home</p>
         <h2 style="margin-top:10px">Welcome to Samborondón</h2>
         <p class="lede">A riverside city in Guayas province, just across the bridge from Guayaquil. It has grown into one of the busiest places in the country for education, healthcare and culture.</p>
         <dl class="facts">
@@ -367,7 +443,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   <section id="club">
     <div class="wrap">
       <div class="head reveal">
-        <p class="eyebrow">05 · Who we are</p>
+        <p class="eyebrow">06 · Who we are</p>
         <h2>Rotaract Club Samborondón</h2>
         <p class="lede">Young leaders from Samborondón serving our community through Rotary International District 4400.</p>
       </div>
@@ -404,7 +480,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   <section class="together" id="together">
     <div class="wrap">
       <div class="head reveal">
-        <p class="eyebrow">06 · Ecuador × The world</p>
+        <p class="eyebrow">07 · Ecuador × The world</p>
         <h2>Let's work together</h2>
         <p class="tri"><span lang="es">Trabajemos juntos</span><span aria-hidden="true">·</span><span lang="hi" title="Aaiye saath milkar kaam karein">आइए साथ मिलकर काम करें</span></p>
         <p class="lede">A few ideas for partnering with Rotaract and Rotary clubs anywhere in the world.</p>
@@ -439,6 +515,12 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
         <li>Chimborazo: <a href="https://commons.wikimedia.org/wiki/File:Chimborazo_05.jpg" target="_blank" rel="noopener">photo</a> by Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
         <li>Malecón 2000: <a href="https://commons.wikimedia.org/wiki/File:Vista_del_Malec%C3%B3n_2000.jpg" target="_blank" rel="noopener">photo</a> by Freddy eduardo, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
         <li>Iglesia de Santa Ana: <a href="https://commons.wikimedia.org/wiki/File:Iglesiasantaana.jpg" target="_blank" rel="noopener">photo</a> by Jorgitob93, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Encebollado: <a href="https://commons.wikimedia.org/wiki/File:Encebollado_Ecuatoriano.png.jpg" target="_blank" rel="noopener">photo</a> by Vapelaez2212, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Bolón de verde: <a href="https://commons.wikimedia.org/wiki/File:Bol%C3%B3n_de_verde_Santa_cruz_2021-11-14.jpg" target="_blank" rel="noopener">photo</a> by Z thomas, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Ceviche de camarón: <a href="https://commons.wikimedia.org/wiki/File:Ceviche_de_camar%C3%B3n_ecuatoriano.jpg" target="_blank" rel="noopener">photo</a> by Ceibos, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Seco de chivo: <a href="https://commons.wikimedia.org/wiki/File:Seco_de_chivo_de_zapotal.jpg" target="_blank" rel="noopener">photo</a> by Aaroncato89, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Pan de yuca: <a href="https://commons.wikimedia.org/wiki/File:Pandeyuca-colombiano.jpg" target="_blank" rel="noopener">photo</a> by Ahoraes, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Colada morada: <a href="https://commons.wikimedia.org/wiki/File:COLADA_MORADA_Y_GUAGUAS_DE_PAN_(38016386062).jpg" target="_blank" rel="noopener">photo</a> by Agencia de Noticias ANDES, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>, via Wikimedia Commons (resized)</li>
       </ul>
     </details>
   </div>
