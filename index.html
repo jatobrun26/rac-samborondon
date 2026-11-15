@@ -125,9 +125,23 @@ a{color:var(--cranberry)}
 .regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
 .region{border-radius:18px;padding:24px;background:var(--surface);border-top:6px solid var(--c);display:flex;flex-direction:column;gap:10px;min-width:0;transition:transform .2s}
 .region:hover{transform:translateY(-4px)}
+.region{overflow:hidden}
+.region img{display:block;width:calc(100% + 48px);max-width:none;margin:-24px -24px 8px;aspect-ratio:16/10;height:auto;object-fit:cover;background:var(--line)}
 .region .tag{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
 .region p{color:var(--muted);font-size:.95rem}
 .region svg{width:44px;height:44px;color:var(--c)}
+
+/* POSTCARDS */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px;gap:12px}
+.shot{position:relative;margin:0;border-radius:18px;overflow:hidden;background:var(--line)}
+.shot.big{grid-column:span 2;grid-row:span 2}
+.shot.wide{grid-column:span 2}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption{position:absolute;inset:auto 0 0 0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font:700 1.15rem/1.2 var(--display)}
+.shot figcaption small{display:block;margin-bottom:4px;font:500 .68rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:180px}}
+@media (max-width:480px){.gallery{grid-template-columns:1fr;grid-auto-rows:230px}.shot.big,.shot.wide{grid-column:auto;grid-row:auto}}
 
 /* SAMBORONDON */
 .sambo{background:var(--surface)}
@@ -177,6 +191,10 @@ a{color:var(--cranberry)}
 
 footer{padding-block:32px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.credits{margin-top:18px;font-size:.8rem}
+.credits summary{cursor:pointer;font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;width:max-content}
+.credits summary:hover{color:var(--cranberry)}
+.credits ul{margin:12px 0 0;padding-left:18px;display:grid;gap:4px}
 footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
 .top{color:var(--muted);text-decoration:none;font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
 .top:hover{color:var(--cranberry)}
@@ -265,22 +283,22 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
       </div>
       <div class="regions">
         <article class="region reveal" style="--c:var(--coast);--i:0">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="34" cy="14" r="6"/><path d="M4 32c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4M4 40c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4"/></svg>
+          <img src="images/coast.jpg" width="1200" height="896" alt="Sunset over the beach at Montañita" loading="lazy" decoding="async">
           <span class="tag">La Costa</span><h3>The Coast</h3>
           <p>Beaches, banana plantations and shrimp farms. Home to Guayaquil and Samborondón.</p>
         </article>
         <article class="region reveal" style="--c:var(--andes);--i:1">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><path d="M3 40l14-24 8 12 6-8 14 20z"/><path d="M13 23l4-7 4 6"/></svg>
+          <img src="images/andes.jpg" width="1200" height="800" alt="Snow-capped Cotopaxi volcano above the páramo" loading="lazy" decoding="async">
           <span class="tag">La Sierra</span><h3>The Andes</h3>
           <p>Snow-capped volcanoes, Quito and colonial cities along the mountain range.</p>
         </article>
         <article class="region reveal" style="--c:var(--amazon);--i:2">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M24 44V20M24 20c-8 0-12-6-12-12 6 0 12 4 12 12zM24 26c8 0 12-6 12-12-6 0-12 4-12 12z"/></svg>
+          <img src="images/amazon.jpg" width="1200" height="666" alt="The Napo River and rainforest near Coca" loading="lazy" decoding="async">
           <span class="tag">El Oriente</span><h3>The Amazon</h3>
           <p>Tropical rainforest in the east, rich in wildlife and Indigenous communities.</p>
         </article>
         <article class="region reveal" style="--c:var(--galapagos);--i:3">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><ellipse cx="22" cy="26" rx="14" ry="9"/><path d="M36 24c4-2 8 0 8 3s-4 3-8 1M12 33l-3 5M30 33l3 5M12 19l-3-4M30 19l3-4"/></svg>
+          <img src="images/galapagos.jpg" width="1200" height="800" alt="Two Galápagos sea lions on the beach at Isabela Island" loading="lazy" decoding="async">
           <span class="tag">Las Islas</span><h3>Galápagos</h3>
           <p>Volcanic islands about 1,000 km offshore, famous for wildlife found nowhere else.</p>
         </article>
@@ -288,10 +306,26 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
     </div>
   </section>
 
+  <section id="postcards" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">03 · Postcards</p>
+        <h2>Postcards from Ecuador</h2>
+        <p class="lede">From colonial Quito to the riverside in Guayaquil and our own Samborondón: a few places we love.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot big reveal" style="--i:0"><img src="images/quito.jpg" width="1200" height="743" alt="Rooftops of Quito's historic center seen from the Basílica del Voto Nacional" loading="lazy" decoding="async"><figcaption><small>Quito · Pichincha</small>The historic center, a UNESCO World Heritage Site</figcaption></figure>
+        <figure class="shot wide reveal" style="--i:1"><img src="images/chimborazo.jpg" width="1200" height="800" alt="Snow-capped Chimborazo volcano above green fields" loading="lazy" decoding="async"><figcaption><small>Chimborazo · 6,263 m</small>The farthest point from Earth’s center</figcaption></figure>
+        <figure class="shot reveal" style="--i:2"><img src="images/guayaquil.jpg" width="1200" height="904" alt="Walkway and gardens along the Malecón 2000 in Guayaquil" loading="lazy" decoding="async"><figcaption><small>Guayaquil</small>Malecón 2000</figcaption></figure>
+        <figure class="shot reveal" style="--i:3"><img src="images/samborondon.jpg" width="1200" height="900" alt="White bell tower of the Santa Ana church in Samborondón" loading="lazy" decoding="async"><figcaption><small>Samborondón</small>Iglesia de Santa Ana</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
   <section class="sambo" id="samborondon">
     <div class="wrap split">
       <div class="reveal">
-        <p class="eyebrow">03 · Our home</p>
+        <p class="eyebrow">04 · Our home</p>
         <h2 style="margin-top:10px">Welcome to Samborondón</h2>
         <p class="lede">A riverside city in Guayas province, just across the bridge from Guayaquil. It has grown into one of the busiest places in the country for education, healthcare and culture.</p>
         <dl class="facts">
@@ -328,7 +362,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   <section id="club">
     <div class="wrap">
       <div class="head reveal">
-        <p class="eyebrow">04 · Who we are</p>
+        <p class="eyebrow">05 · Who we are</p>
         <h2>Rotaract Club Samborondón</h2>
         <p class="lede">Young leaders from Samborondón serving our community through Rotary International District 4400.</p>
       </div>
@@ -365,7 +399,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   <section class="together" id="together">
     <div class="wrap">
       <div class="head reveal">
-        <p class="eyebrow">05 · Ecuador × The world</p>
+        <p class="eyebrow">06 · Ecuador × The world</p>
         <h2>Let's work together</h2>
         <p class="lede">A few ideas for partnering with Rotaract and Rotary clubs anywhere in the world.</p>
       </div>
@@ -386,6 +420,21 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
     <span class="motto">Create Lasting Impact</span>
     <a class="top" href="https://www.instagram.com/rotaract_samborondon/" target="_blank" rel="noopener">Instagram @rotaract_samborondon</a>
     <a class="top" href="#top">Back to top ↑</a>
+  </div>
+  <div class="wrap">
+    <details class="credits">
+      <summary>Photo credits</summary>
+      <ul>
+        <li>Montañita: <a href="https://commons.wikimedia.org/wiki/File:Atardecer_en_Monta%C3%B1ita.jpg" target="_blank" rel="noopener">photo</a> by Mikaelashamrock, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Cotopaxi: <a href="https://commons.wikimedia.org/wiki/File:Cotopaxi_01.jpg" target="_blank" rel="noopener">photo</a> by Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Napo River: <a href="https://commons.wikimedia.org/wiki/File:Rio-napo-by-boat-snd.JPG" target="_blank" rel="noopener">photo</a> by SabineDeviche, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Galápagos sea lions: <a href="https://commons.wikimedia.org/wiki/File:Gal%C3%A1pagos_sea_lions_Isabela.jpg" target="_blank" rel="noopener">photo</a> by Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Quito: <a href="https://commons.wikimedia.org/wiki/File:Quito_as_from_panecillo_Basilica.jpg" target="_blank" rel="noopener">photo</a> by Cayambe, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Chimborazo: <a href="https://commons.wikimedia.org/wiki/File:Chimborazo_05.jpg" target="_blank" rel="noopener">photo</a> by Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Malecón 2000: <a href="https://commons.wikimedia.org/wiki/File:Vista_del_Malec%C3%B3n_2000.jpg" target="_blank" rel="noopener">photo</a> by Freddy eduardo, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Iglesia de Santa Ana: <a href="https://commons.wikimedia.org/wiki/File:Iglesiasantaana.jpg" target="_blank" rel="noopener">photo</a> by Jorgitob93, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+      </ul>
+    </details>
   </div>
 </footer>
 
