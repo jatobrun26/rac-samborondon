@@ -424,7 +424,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   // Live clocks: Samborondón + world cities, with difference from Samborondón
   var HOME = 'America/Guayaquil';
   var CITIES = [
-    ['Your time', null], ['New York', 'America/New_York'], ['São Paulo', 'America/Sao_Paulo'],
+    ['New Delhi', 'Asia/Kolkata'], ['New York', 'America/New_York'], ['São Paulo', 'America/Sao_Paulo'],
     ['Madrid', 'Europe/Madrid'], ['London', 'Europe/London'], ['Tokyo', 'Asia/Tokyo']
   ];
   function fmt(tz, opts){ return new Intl.DateTimeFormat('en-GB', Object.assign({timeZone:tz}, opts)).format(new Date()); }
@@ -440,9 +440,7 @@ footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
   }
   var world = document.getElementById('world');
   try {
-    var local = Intl.DateTimeFormat().resolvedOptions().timeZone;
     CITIES.forEach(function(c){
-      c[1] = c[1] || local;
       var el = document.createElement('div'); el.className = 'city';
       el.innerHTML = '<small></small><b>--:--</b><span></span>';
       el.firstChild.textContent = c[0];
