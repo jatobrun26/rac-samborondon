@@ -86,8 +86,7 @@ section { padding-block: clamp(64px, 9vw, 112px); }
 .nav-inner { height: var(--nav-h); display: flex; align-items: center; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 500 1.05rem/1 var(--display); letter-spacing: -.01em; white-space: nowrap; }
 .brand b { font-weight: 800; }
-.wheel-mark { width: 34px; height: 34px; fill: var(--cranberry); stroke: none; }
-.wheel-mark circle:first-child { fill: var(--cranberry); }
+.wheel-mark { width: 34px; height: 34px; flex: none; }
 .links { display: flex; align-items: center; gap: 2px; margin-left: auto; }
 .links a:not(.btn) { display: block; padding: 8px 12px; border-radius: 999px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: .93rem; transition: color .15s, background .15s; }
 .links a:not(.btn):hover { color: var(--ink); background: var(--surface); }
@@ -113,7 +112,7 @@ html[lang="es"] .lang-btn [data-lang="es"], html[lang="en"] .lang-btn [data-lang
 
 /* Hero */
 .hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(1200px 600px at 85% -10%, #F0458E 0%, transparent 60%), linear-gradient(135deg, #D41367 0%, #9E0D4C 70%, #6E0835 100%); padding-block: clamp(56px, 9vw, 104px) clamp(64px, 10vw, 120px); }
-.hero-wheel { position: absolute; width: clamp(380px, 55vw, 760px); height: auto; right: -12%; bottom: -30%; opacity: .1; animation: spin 120s linear infinite; }
+.hero-wheel { position: absolute; width: clamp(380px, 55vw, 760px); aspect-ratio: 1; background: currentColor; -webkit-mask: url(img/rotary-wheel-1024.png) center / contain no-repeat; mask: url(img/rotary-wheel-1024.png) center / contain no-repeat; right: -12%; bottom: -30%; opacity: .1; animation: spin 120s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
 .hero h1 { font-size: clamp(2.6rem, 7.2vw, 5.4rem); font-weight: 800; letter-spacing: -.035em; }
