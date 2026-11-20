@@ -3,30 +3,21 @@
   'use strict';
 
   const CFG = window.RAC_CONFIG || {};
-  const DICT = window.RAC_I18N;
   const API = (CFG.apiUrl || '').trim();
   const DEMO = !API;
   const MAX_FILE = 5 * 1024 * 1024;
-  const root = document.documentElement;
+  const R = window.RAC; // código compartido (assets/site.js)
 
-  let lang = root.lang === 'en' ? 'en' : 'es';
+  let lang = R.lang;
   let site = null; // datos de la hoja
   let siteError = false;
 
   /* ---------------- Utilidades ---------------- */
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
-  const t = (key, vars) => {
-    let s = (DICT[lang] && DICT[lang][key]) || DICT.es[key] || key;
-    if (vars) Object.keys(vars).forEach(k => { s = s.replace('{' + k + '}', vars[k]); });
-    return s;
-  };
-  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const pick = obj => (obj && (obj[lang] || obj.es || obj.en)) || '';
-  const store = {
-    get(k) { try { return localStorage.getItem(k); } catch (_) { return null; } },
-    set(k, v) { try { localStorage.setItem(k, v); } catch (_) {} },
-  };
+  const t = R.t;
+  const esc = R.esc;
+  const pick = R.pick;
   const parseIso = iso => {
     if (!iso) return null;
     const [y, m, d] = iso.split('-').map(Number);
@@ -45,46 +36,12 @@
   };
 
   /* ---------------- Idioma ---------------- */
-  function applyLang() {
-    root.lang = lang;
-    document.title = t('meta.title');
-    const md = $('meta[name="description"]');
-    if (md) md.setAttribute('content', t('meta.description'));
-    $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
-    $$('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+  R.onLang(next => {
+    lang = next;
     renderAll();
     // Mensajes de formulario visibles: se limpian para no quedar en otro idioma.
     $$('.form-msg').forEach(m => { if (!m.classList.contains('ok')) { m.textContent = ''; m.className = 'form-msg'; } });
-  }
-  $('#lang').addEventListener('click', () => {
-    lang = lang === 'es' ? 'en' : 'es';
-    store.set('rac-lang', lang);
-    applyLang();
   });
-
-  /* ---------------- Tema ---------------- */
-  $('#theme').addEventListener('click', () => {
-    const dark = root.dataset.theme
-      ? root.dataset.theme === 'dark'
-      : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    root.dataset.theme = dark ? 'light' : 'dark';
-    store.set('rac-theme', root.dataset.theme);
-  });
-
-  /* ---------------- Menú ---------------- */
-  const menu = $('#menu');
-  const links = $('#links');
-  menu.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    menu.setAttribute('aria-expanded', String(open));
-  });
-  links.addEventListener('click', e => {
-    if (e.target.closest('a')) { links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }
-  });
-  const nav = $('.nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   /* ---------------- Datos ---------------- */
   async function loadSite() {
@@ -410,15 +367,9 @@
     });
   });
 
-  /* ---------------- Animación de aparición ---------------- */
-  const io = 'IntersectionObserver' in window
-    ? new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -40px 0px' })
-    : null;
-  function observeReveal() {
-    $$('.reveal:not(.in)').forEach(el => { if (io) io.observe(el); else el.classList.add('in'); });
-  }
+  const observeReveal = R.observeReveal;
 
   /* ---------------- Inicio ---------------- */
-  applyLang();
+  R.start();
   loadSite();
 })();
