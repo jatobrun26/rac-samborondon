@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rotaract Club Samborondón</title>
+<meta name="description" content="Greetings from Ecuador! Meet Rotaract Club Samborondón (District 4400): young leaders serving our community and building friendships with clubs around the world.">
+<meta name="theme-color" content="#D41367">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rotaract Club Samborondón · Greetings from Ecuador">
+<meta property="og:description" content="Our country, our city and our club: young leaders from Samborondón, Ecuador, open to friendships with clubs around the world.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D41367'/%3E%3Cg fill='none' stroke='white' stroke-width='6'%3E%3Ccircle cx='50' cy='50' r='30'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M50 14v72M14 50h72M25 25l50 50M75 25L25 75'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Noto+Sans+Devanagari:wght@500;700;800&display=swap">
+<style>
+:root{
+  --cranberry:#D41367;
+  --cranberry-deep:#9E0D4C;
+  --bg:#FFFFFF;
+  --surface:#FBF3F7;
+  --ink:#1E1A24;
+  --muted:#6A6172;
+  --line:#EBDDE5;
+  --on-accent:#FFFFFF;
+  --night:#1E1A24; --night-ink:#F3EEF2;
+  --coast:#C9821C; --andes:#5E7C8A; --amazon:#2F7D4F; --galapagos:#2A86A8;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  --nav-h:60px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --cranberry:#F0458E; --cranberry-deep:#C21A64; --bg:#141017; --surface:#1E1820; --ink:#F3EEF2; --muted:#B3A8B5; --line:#33282F;
+  --night:#0C090E; --night-ink:#F3EEF2;
+  --coast:#F0B65A; --andes:#8AA7B4; --amazon:#5BB07D; --galapagos:#5AB3D4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --cranberry:#F0458E; --cranberry-deep:#C21A64; --bg:#141017; --surface:#1E1820; --ink:#F3EEF2; --muted:#B3A8B5; --line:#33282F;
+  --night:#0C090E; --night-ink:#F3EEF2;
+  --coast:#F0B65A; --andes:#8AA7B4; --amazon:#5BB07D; --galapagos:#5AB3D4; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+section{padding-block:clamp(56px,9vw,96px)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-.02em}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 .75rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cranberry)}
+.lede{color:var(--muted);max-width:60ch;font-size:1.0625rem;margin-top:14px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
+a{color:var(--cranberry)}
+:focus-visible{outline:3px solid var(--cranberry);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px}
+.skip:focus{left:16px}
+
+[lang="hi"]{font-family:"Noto Sans Devanagari", var(--body)}
+.thanks [lang="hi"]{font-family:"Noto Sans Devanagari", var(--display);font-weight:800}
+.tri{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--cranberry);font:600 1rem/1.5 var(--body)}
+.tri [lang="hi"]{font-weight:700}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;height:var(--nav-h);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 1.05rem/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.brand svg{width:28px;height:28px;color:var(--cranberry);flex:0 0 auto}
+.links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-weight:500;font-size:.92rem;transition:color .15s,background .15s}
+.links a:hover,.links a.active{color:var(--ink);background:var(--surface)}
+.nav-tools{display:flex;align-items:center;gap:6px}
+.icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.icon-btn:hover{background:var(--surface)}
+.icon-btn svg{width:18px;height:18px}
+.menu-btn{display:none}
+@media (max-width:860px){
+  .menu-btn{display:grid}
+  .links{position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;align-items:stretch;gap:2px;padding:10px 16px 18px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .links a{padding:12px 14px;font-size:1rem}
+}
+
+/* HERO */
+.hero{background:var(--cranberry);color:var(--on-accent);position:relative;overflow:hidden;padding-block:0;isolation:isolate}
+.hero::after{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(ellipse at center,var(--cranberry-deep),transparent 70%);z-index:-1;opacity:.7}
+.hero .wrap{padding-block:clamp(64px,10vw,112px) clamp(56px,8vw,88px);display:grid;gap:28px;position:relative;z-index:1}
+.hero .eyebrow{color:var(--on-accent);opacity:.85}
+.hero h1{font-size:clamp(3rem,9vw,6.5rem);font-weight:800;letter-spacing:-.035em}
+.hero h1 span{display:block;font-weight:500;font-size:.42em;letter-spacing:-.01em;margin-top:.35em;opacity:.92}
+.hero p{max-width:52ch;font-size:1.125rem;opacity:.95}
+.equator{display:flex;align-items:center;gap:14px;font:500 .8rem/1.4 var(--mono);letter-spacing:.08em}
+.equator::before{content:"";flex:0 0 48px;height:2px;background:var(--on-accent)}
+.hello{display:flex;flex-wrap:wrap;gap:10px}
+.hello span{border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-light{background:#fff;color:#9E0D4C}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.7)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.wheel{position:absolute;right:-140px;top:50%;width:560px;height:560px;transform:translateY(-50%);opacity:.14;z-index:0}
+@media (max-width:640px){.wheel{width:380px;height:380px;right:-170px;top:28%}}
+@media (prefers-reduced-motion:no-preference){.wheel{animation:spin 90s linear infinite}@keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}}
+
+/* CLOCKS */
+.clocks{margin-top:8px;max-width:760px;display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:center;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:18px 22px}
+.home{display:flex;flex-direction:column;gap:4px;padding-right:28px;border-right:1px solid rgba(255,255,255,.3)}
+.home small,.city small{font:500 .68rem/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.home b{font:800 clamp(2rem,5vw,2.75rem)/1 var(--display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.home span{font-size:.8rem;opacity:.8}
+.world{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px}
+.city{display:flex;flex-direction:column;gap:3px;min-width:0}
+.city small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.city b{font:700 1.2rem/1 var(--display);font-variant-numeric:tabular-nums}
+.city span{font:500 .7rem/1.2 var(--mono);opacity:.75}
+@media (max-width:600px){.clocks{grid-template-columns:1fr}.home{padding:0 0 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.3)}.world{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stat{background:var(--bg);padding:24px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.stat b{font:800 2rem/1 var(--display);letter-spacing:-.02em;color:var(--cranberry);font-variant-numeric:tabular-nums}
+.stat small{color:var(--muted);font-size:.9rem}
+
+/* REGIONS */
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.region{border-radius:18px;padding:24px;background:var(--surface);border-top:6px solid var(--c);display:flex;flex-direction:column;gap:10px;min-width:0;transition:transform .2s}
+.region:hover{transform:translateY(-4px)}
+.region{overflow:hidden}
+.region img{display:block;width:calc(100% + 48px);max-width:none;margin:-24px -24px 8px;aspect-ratio:16/10;height:auto;object-fit:cover;background:var(--line)}
+.region .tag{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.region p{color:var(--muted);font-size:.95rem}
+.region svg{width:44px;height:44px;color:var(--c)}
+
+/* POSTCARDS */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px;gap:12px}
+.shot{position:relative;margin:0;border-radius:18px;overflow:hidden;background:var(--line)}
+.shot.big{grid-column:span 2;grid-row:span 2}
+.shot.wide{grid-column:span 2}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption{position:absolute;inset:auto 0 0 0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font:700 1.15rem/1.2 var(--display)}
+.shot figcaption small{display:block;margin-bottom:4px;font:500 .68rem/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:180px}}
+@media (max-width:480px){.gallery{grid-template-columns:1fr;grid-auto-rows:230px}.shot.big,.shot.wide{grid-column:auto;grid-row:auto}}
+
+/* FOOD */
+.dishes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.dish{border-radius:18px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column;min-width:0;transition:transform .2s}
+.dish:hover{transform:translateY(-4px)}
+.dish .ph{aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.dish img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.dish:hover img{transform:scale(1.05)}
+.dish .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.dish .meta{display:flex;flex-wrap:wrap;gap:6px}
+.dish .meta span{font:500 .68rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cranberry);border:1px solid color-mix(in srgb,var(--cranberry) 35%,transparent);border-radius:999px;padding:5px 9px}
+.dish h3 small{display:block;margin-top:4px;font:500 .9rem/1.3 var(--body);color:var(--muted)}
+.dish p{color:var(--muted);font-size:.95rem}
+.food-note{margin-top:20px;color:var(--muted);font-size:.95rem}
+
+/* SAMBORONDON */
+.sambo{background:var(--surface)}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.facts{display:grid;gap:0;margin:28px 0 0;border-top:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+@media (max-width:480px){.fact{grid-template-columns:1fr;gap:2px}}
+.fact dt{font:500 .75rem/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cranberry)}
+.fact dd{margin:0}
+.map{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:20px;margin:0}
+.map svg{width:100%;height:auto;display:block}
+.map figcaption{font:500 .75rem/1.4 var(--mono);color:var(--muted);margin-top:10px;letter-spacing:.04em}
+
+/* CLUB */
+.club-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .k{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card .v{font:700 1.35rem/1.2 var(--display)}
+.todo{display:inline-block;border:1.5px dashed var(--cranberry);color:var(--cranberry);border-radius:8px;padding:2px 8px;font:500 .85rem/1.4 var(--mono)}
+.officers-title{margin:44px 0 16px;font:500 .75rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.officers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.officer{display:flex;gap:14px;align-items:center;padding:16px;border-radius:16px;background:var(--surface);border:1px solid transparent;transition:border-color .2s}
+.officer:hover{border-color:var(--line)}
+.avatar{flex:0 0 48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--cranberry),var(--cranberry-deep));color:#fff;display:grid;place-items:center;font:700 1rem/1 var(--display)}
+.officer b{display:block;font-size:1rem}
+.officer small{color:var(--muted);font-size:.85rem}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.project{border-radius:18px;padding:24px;background:var(--surface);display:flex;flex-direction:column;gap:10px;min-width:0;border-left:4px solid var(--cranberry)}
+.project .n{font:500 .75rem/1 var(--mono);color:var(--cranberry);letter-spacing:.1em}
+.project p{color:var(--muted);font-size:.95rem}
+
+/* TOGETHER */
+.together{background:var(--night);color:var(--night-ink)}
+.together .eyebrow{color:var(--cranberry)}
+.together .lede{color:var(--night-ink);opacity:.75}
+.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;counter-reset:idea}
+.idea{border:1px solid color-mix(in srgb,var(--night-ink) 18%,transparent);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;transition:border-color .2s,background .2s}
+.idea:hover{border-color:var(--cranberry);background:color-mix(in srgb,var(--cranberry) 8%,transparent)}
+.idea::after{counter-increment:idea;content:"0" counter(idea);position:absolute;top:20px;right:22px;font:500 .72rem/1 var(--mono);opacity:.45}
+.idea svg{width:28px;height:28px;color:var(--cranberry)}
+.idea p{opacity:.75;font-size:.95rem}
+.thanks{margin-top:56px;display:flex;flex-wrap:wrap;gap:12px 28px;font:800 clamp(1.75rem,5vw,3rem)/1.1 var(--display);letter-spacing:-.02em}
+.thanks span:nth-child(2){color:var(--cranberry)}
+
+footer{padding-block:32px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.credits{margin-top:18px;font-size:.8rem}
+.credits summary{cursor:pointer;font:500 .72rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;width:max-content}
+.credits summary:hover{color:var(--cranberry)}
+.credits ul{margin:12px 0 0;padding-left:18px;display:grid;gap:4px}
+footer .motto{font:700 1rem/1 var(--display);color:var(--cranberry)}
+.top{color:var(--muted);text-decoration:none;font:500 .75rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.top:hover{color:var(--cranberry)}
+
+/* Reveal on scroll */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 70ms)}
+  .js .reveal.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Rotaract Club Samborondón, back to top">
+      <svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="7"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="10"/><path d="M50 10v80M10 50h80M22 22l56 56M78 22L22 78"/></svg>
+      <span>RAC Samborondón</span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="#ecuador">Ecuador</a></li>
+      <li><a href="#food">Food</a></li>
+      <li><a href="#samborondon">Samborondón</a></li>
+      <li><a href="#club">Our club</a></li>
+      <li><a href="#together">Partnership</a></li>
+      <li><a href="../">Club website ↗</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme" type="button" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="wheel" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3">
+    <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="8"/>
+    <g stroke-width="4"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/></g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">Rotary International · District 4400</p>
+    <h1>Greetings from Ecuador<span>Rotaract Club Samborondón</span></h1>
+    <p>We are young leaders from Samborondón, Ecuador, serving our community and building friendships across the Rotaract world. Get to know our country, our city and our club, and let's find ways to create lasting impact together.</p>
+    <div class="equator">0° 00′ 00″ · The country named after the equator</div>
+    <div class="hello"><span>¡Hola!</span><span>Hello!</span><span>Olá!</span><span>Bonjour!</span><span lang="hi" title="Namaste">नमस्ते!</span></div>
+    <div class="clocks" aria-label="Current local time in Samborondón and around the world">
+      <div class="home"><small>Samborondón now</small><b id="t-home">--:--</b><span id="d-home">Ecuador · UTC−5</span></div>
+      <div class="world" id="world"></div>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-light" href="#club">Meet our club
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="#together">Let's work together</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section id="ecuador">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">01 · The country</p>
+        <h2>Ecuador at a glance</h2>
+        <p class="lede">A small country on the Pacific coast of South America, crossed by the equator and home to some of the most varied landscapes on the planet.</p>
+      </div>
+      <div class="stats">
+        <div class="stat reveal" style="--i:0"><b>Quito</b><small>Capital city, high in the Andes</small></div>
+        <div class="stat reveal" style="--i:1"><b>18.5M</b><small>People (2025 estimate)</small></div>
+        <div class="stat reveal" style="--i:2"><b>24</b><small>Provinces, including the Galápagos</small></div>
+        <div class="stat reveal" style="--i:3"><b>US$</b><small>Currency: the US dollar</small></div>
+        <div class="stat reveal" style="--i:4"><b>Español</b><small>Official language: Spanish</small></div>
+      </div>
+      <p class="lede reveal" style="margin-top:20px">Guayaquil is the largest city, with about 3.1 million people. Ecuador's main exports are oil, shrimp, bananas, fish and gold.</p>
+    </div>
+  </section>
+
+  <section id="regions" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">02 · Four worlds</p>
+        <h2>One country, four worlds</h2>
+        <p class="lede">In a single day you can go from the beach to a volcano. Ecuador is usually described as four natural regions.</p>
+      </div>
+      <div class="regions">
+        <article class="region reveal" style="--c:var(--coast);--i:0">
+          <img src="../images/coast.jpg" width="1200" height="896" alt="Sunset over the beach at Montañita" loading="lazy" decoding="async">
+          <span class="tag">La Costa</span><h3>The Coast</h3>
+          <p>Beaches, banana plantations and shrimp farms. Home to Guayaquil and Samborondón.</p>
+        </article>
+        <article class="region reveal" style="--c:var(--andes);--i:1">
+          <img src="../images/andes.jpg" width="1200" height="800" alt="Snow-capped Cotopaxi volcano above the páramo" loading="lazy" decoding="async">
+          <span class="tag">La Sierra</span><h3>The Andes</h3>
+          <p>Snow-capped volcanoes, Quito and colonial cities along the mountain range.</p>
+        </article>
+        <article class="region reveal" style="--c:var(--amazon);--i:2">
+          <img src="../images/amazon.jpg" width="1200" height="666" alt="The Napo River and rainforest near Coca" loading="lazy" decoding="async">
+          <span class="tag">El Oriente</span><h3>The Amazon</h3>
+          <p>Tropical rainforest in the east, rich in wildlife and Indigenous communities.</p>
+        </article>
+        <article class="region reveal" style="--c:var(--galapagos);--i:3">
+          <img src="../images/galapagos.jpg" width="1200" height="800" alt="Two Galápagos sea lions on the beach at Isabela Island" loading="lazy" decoding="async">
+          <span class="tag">Las Islas</span><h3>Galápagos</h3>
+          <p>Volcanic islands about 1,000 km offshore, famous for wildlife found nowhere else.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="postcards" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">03 · Postcards</p>
+        <h2>Postcards from Ecuador</h2>
+        <p class="lede">From colonial Quito to the riverside in Guayaquil and our own Samborondón: a few places we love.</p>
+      </div>
+      <div class="gallery">
+        <figure class="shot big reveal" style="--i:0"><img src="../images/quito.jpg" width="1200" height="743" alt="Rooftops of Quito's historic center seen from the Basílica del Voto Nacional" loading="lazy" decoding="async"><figcaption><small>Quito · Pichincha</small>The historic center, a UNESCO World Heritage Site</figcaption></figure>
+        <figure class="shot wide reveal" style="--i:1"><img src="../images/chimborazo.jpg" width="1200" height="800" alt="Snow-capped Chimborazo volcano above green fields" loading="lazy" decoding="async"><figcaption><small>Chimborazo · 6,263 m</small>The farthest point from Earth’s center</figcaption></figure>
+        <figure class="shot reveal" style="--i:2"><img src="../images/guayaquil.jpg" width="1200" height="904" alt="Walkway and gardens along the Malecón 2000 in Guayaquil" loading="lazy" decoding="async"><figcaption><small>Guayaquil</small>Malecón 2000</figcaption></figure>
+        <figure class="shot reveal" style="--i:3"><img src="../images/samborondon.jpg" width="1200" height="900" alt="White bell tower of the Santa Ana church in Samborondón" loading="lazy" decoding="async"><figcaption><small>Samborondón</small>Iglesia de Santa Ana</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="food" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">04 · Our food</p>
+        <h2>A taste of Ecuador</h2>
+        <p class="lede">Our food changes from region to region, but plantain, yuca, seafood and corn are everywhere. Here are a few dishes we grew up with.</p>
+      </div>
+      <div class="dishes">
+        <article class="dish reveal" style="--i:0">
+          <div class="ph"><img src="../images/food/encebollado.jpg" width="900" height="674" alt="A bowl of encebollado fish soup with pickled red onion and cilantro" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Breakfast</span></div>
+            <h3 lang="es">Encebollado<small lang="en">Fish and onion soup</small></h3>
+            <p>Albacore tuna, yuca and pickled red onion in a warm, tangy broth. Topped with chifles (plantain chips) and popcorn, it is the classic weekend breakfast on the coast.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:1">
+          <div class="ph"><img src="../images/food/bolon.jpg" width="900" height="430" alt="A bolón de verde with a fried egg and stew" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Breakfast</span></div>
+            <h3 lang="es">Bolón de verde<small lang="en">Green plantain ball</small></h3>
+            <p>Green plantain fried and mashed into a ball with cheese or chicharrón (pork cracklings). Usually eaten with a fried egg and a cup of coffee.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:2">
+          <div class="ph"><img src="../images/food/ceviche.jpg" width="900" height="900" alt="Ecuadorian shrimp ceviche in a tangy broth with avocado" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Lunch</span></div>
+            <h3 lang="es">Ceviche de camarón<small lang="en">Shrimp ceviche</small></h3>
+            <p>Shrimp in a cold broth of lime, orange and tomato with red onion and cilantro. In Ecuador it comes with popcorn or chifles on the side.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:0">
+          <div class="ph"><img src="../images/food/seco.jpg" width="900" height="675" alt="Seco de chivo stew with yellow rice and fried sweet plantain" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Coast</span><span>Lunch</span></div>
+            <h3 lang="es">Seco de chivo<small lang="en">Goat stew</small></h3>
+            <p>Goat slowly stewed with naranjilla, herbs and spices. Served with yellow rice, avocado and maduro (fried sweet plantain).</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:1">
+          <div class="ph"><img src="../images/food/pan-de-yuca.jpg" width="900" height="495" alt="Freshly baked pan de yuca cheese breads" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Snack</span><span>Anytime</span></div>
+            <h3 lang="es">Pan de yuca<small lang="en">Cassava cheese bread</small></h3>
+            <p>Soft little breads made with yuca (cassava) starch and fresh cheese. Best eaten warm with a cold glass of drinkable yogurt.</p>
+          </div>
+        </article>
+        <article class="dish reveal" style="--i:2">
+          <div class="ph"><img src="../images/food/colada-morada.jpg" width="900" height="592" alt="A glass of colada morada next to the fruits and spices used to make it" loading="lazy" decoding="async"></div>
+          <div class="body">
+            <div class="meta"><span>Tradition</span><span>2 November</span></div>
+            <h3 lang="es">Colada morada<small lang="en">With guaguas de pan</small></h3>
+            <p>A thick, spiced purple drink made with black corn flour, blackberries, mortiño and pineapple. Served with guaguas de pan (bread dolls) for Día de los Difuntos, the Day of the Dead.</p>
+          </div>
+        </article>
+      </div>
+      <p class="food-note reveal">¡Buen provecho! · Enjoy your meal!</p>
+    </div>
+  </section>
+
+  <section class="sambo" id="samborondon">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">05 · Our home</p>
+        <h2 style="margin-top:10px">Welcome to Samborondón</h2>
+        <p class="lede">A riverside city in Guayas province, just across the bridge from Guayaquil. It has grown into one of the busiest places in the country for education, healthcare and culture.</p>
+        <dl class="facts">
+          <div class="fact"><dt>Location</dt><dd>Guayas province, on the coast · 2°S, 79°W</dd></div>
+          <div class="fact"><dt>Founded</dt><dd>1776 · became a canton in 1955</dd></div>
+          <div class="fact"><dt>Population</dt><dd>About 82,000 residents (2022 census)</dd></div>
+          <div class="fact"><dt>The name</dt><dd>From Saint Brendan, <i>San Borondón</i> in Spanish</dd></div>
+          <div class="fact"><dt>Landmarks</dt><dd>Parque Histórico, Teatro Sánchez Aguilar and several universities</dd></div>
+        </dl>
+      </div>
+      <figure class="map reveal" style="--i:1">
+        <svg viewBox="0 0 320 300" role="img" aria-label="Map sketch: the Daule and Babahoyo rivers meet at La Puntilla to form the Guayas River, between Guayaquil and Samborondón">
+          <path d="M40 0 C60 60 90 110 150 160" stroke="var(--galapagos)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M290 0 C260 70 210 120 150 160" stroke="var(--galapagos)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M150 160 C150 210 160 250 170 300" stroke="var(--galapagos)" stroke-width="18" fill="none" stroke-linecap="round"/>
+          <circle cx="150" cy="148" r="9" fill="var(--cranberry)"/>
+          <circle cx="150" cy="148" r="17" fill="none" stroke="var(--cranberry)" stroke-width="2"/>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">
+            <text x="52" y="40">Daule River</text>
+            <text x="198" y="40">Babahoyo River</text>
+            <text x="180" y="245">Guayas River</text>
+          </g>
+          <g font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="16" fill="var(--ink)">
+            <text x="22" y="200">Guayaquil</text>
+            <text x="200" y="125">Samborondón</text>
+          </g>
+          <text x="166" y="168" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--cranberry)">La Puntilla</text>
+        </svg>
+        <figcaption>Sketch, not to scale · La Puntilla sits where two rivers meet to form the Guayas</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="club">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">06 · Who we are</p>
+        <h2>Rotaract Club Samborondón</h2>
+        <p class="lede">Young leaders from Samborondón serving our community through Rotary International District 4400.</p>
+      </div>
+      <div class="club-grid">
+        <div class="card reveal" style="--i:0"><span class="k">District</span><span class="v">4400</span></div>
+        <div class="card reveal" style="--i:1"><span class="k">Chartered</span><span class="v">2019</span></div>
+        <div class="card reveal" style="--i:2"><span class="k">Members</span><span class="v">15</span></div>
+        <div class="card reveal" style="--i:3"><span class="k">Focus areas</span><span class="v">Education &amp; Health</span></div>
+      </div>
+      <p class="officers-title reveal">Board of directors</p>
+      <div class="officers">
+        <div class="officer reveal" style="--i:0"><span class="avatar" aria-hidden="true">JT</span><div><b>Rtr. Jamil Torres</b><small>President</small></div></div>
+        <div class="officer reveal" style="--i:1"><span class="avatar" aria-hidden="true">GB</span><div><b>Rtr. Gabriela Baque</b><small>Vice President</small></div></div>
+        <div class="officer reveal" style="--i:2"><span class="avatar" aria-hidden="true">KV</span><div><b>Rtr. Karla Vargas</b><small>Secretary</small></div></div>
+        <div class="officer reveal" style="--i:3"><span class="avatar" aria-hidden="true">EH</span><div><b>Rtr. Erixon Hurtado</b><small>Treasurer</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="padding-top:0" hidden>
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">05 · What we do</p>
+        <h2>Our projects</h2>
+      </div>
+      <div class="projects">
+        <article class="project reveal" style="--i:0"><span class="n">Project 01</span><h3><span class="todo">project name</span></h3><p>What we did and who it helped.</p></article>
+        <article class="project reveal" style="--i:1"><span class="n">Project 02</span><h3><span class="todo">project name</span></h3><p>What we did and who it helped.</p></article>
+        <article class="project reveal" style="--i:2"><span class="n">Project 03</span><h3><span class="todo">project name</span></h3><p>What we did and who it helped.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="together" id="together">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">07 · Ecuador × The world</p>
+        <h2>Let's work together</h2>
+        <p class="tri"><span lang="es">Trabajemos juntos</span><span aria-hidden="true">·</span><span lang="hi" title="Aaiye saath milkar kaam karein">आइए साथ मिलकर काम करें</span></p>
+        <p class="lede">A few ideas for partnering with Rotaract and Rotary clubs anywhere in the world.</p>
+      </div>
+      <div class="ideas">
+        <div class="idea reveal" style="--i:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><h3>Letterhead exchange</h3><p>Share our official letterheads to formalize the partnership.</p></div>
+        <div class="idea reveal" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><h3>Virtual meetings</h3><p>Joint calls and cultural nights to get to know each other.</p></div>
+        <div class="idea reveal" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><h3>Shared service project</h3><p>One project we run together in both countries.</p></div>
+        <div class="idea reveal" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Stay connected</h3><p>Follow and share each other's work on social media. Find us on Instagram: <a href="https://www.instagram.com/rotaract_samborondon/" target="_blank" rel="noopener">@rotaract_samborondon</a></p></div>
+      </div>
+      <div class="thanks reveal"><span>Gracias</span><span>Thank you</span><span>Obrigado</span><span lang="hi" title="Dhanyavaad">धन्यवाद</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Rotaract Club Samborondón · District 4400 · Ecuador</span>
+    <span class="motto">Create Lasting Impact</span>
+    <a class="top" href="https://www.instagram.com/rotaract_samborondon/" target="_blank" rel="noopener">Instagram @rotaract_samborondon</a>
+    <a class="top" href="#top">Back to top ↑</a>
+  </div>
+  <div class="wrap">
+    <details class="credits">
+      <summary>Photo credits</summary>
+      <ul>
+        <li>Montañita: <a href="https://commons.wikimedia.org/wiki/File:Atardecer_en_Monta%C3%B1ita.jpg" target="_blank" rel="noopener">photo</a> by Mikaelashamrock, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Cotopaxi: <a href="https://commons.wikimedia.org/wiki/File:Cotopaxi_01.jpg" target="_blank" rel="noopener">photo</a> by Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Napo River: <a href="https://commons.wikimedia.org/wiki/File:Rio-napo-by-boat-snd.JPG" target="_blank" rel="noopener">photo</a> by SabineDeviche, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Galápagos sea lions: <a href="https://commons.wikimedia.org/wiki/File:Gal%C3%A1pagos_sea_lions_Isabela.jpg" target="_blank" rel="noopener">photo</a> by Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Quito: <a href="https://commons.wikimedia.org/wiki/File:Quito_as_from_panecillo_Basilica.jpg" target="_blank" rel="noopener">photo</a> by Cayambe, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Chimborazo: <a href="https://commons.wikimedia.org/wiki/File:Chimborazo_05.jpg" target="_blank" rel="noopener">photo</a> by Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Malecón 2000: <a href="https://commons.wikimedia.org/wiki/File:Vista_del_Malec%C3%B3n_2000.jpg" target="_blank" rel="noopener">photo</a> by Freddy eduardo, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Iglesia de Santa Ana: <a href="https://commons.wikimedia.org/wiki/File:Iglesiasantaana.jpg" target="_blank" rel="noopener">photo</a> by Jorgitob93, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Encebollado: <a href="https://commons.wikimedia.org/wiki/File:Encebollado_Ecuatoriano.png.jpg" target="_blank" rel="noopener">photo</a> by Vapelaez2212, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Bolón de verde: <a href="https://commons.wikimedia.org/wiki/File:Bol%C3%B3n_de_verde_Santa_cruz_2021-11-14.jpg" target="_blank" rel="noopener">photo</a> by Z thomas, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Ceviche de camarón: <a href="https://commons.wikimedia.org/wiki/File:Ceviche_de_camar%C3%B3n_ecuatoriano.jpg" target="_blank" rel="noopener">photo</a> by Ceibos, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Seco de chivo: <a href="https://commons.wikimedia.org/wiki/File:Seco_de_chivo_de_zapotal.jpg" target="_blank" rel="noopener">photo</a> by Aaroncato89, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Pan de yuca: <a href="https://commons.wikimedia.org/wiki/File:Pandeyuca-colombiano.jpg" target="_blank" rel="noopener">photo</a> by Ahoraes, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons (resized)</li>
+        <li>Colada morada: <a href="https://commons.wikimedia.org/wiki/File:COLADA_MORADA_Y_GUAGUAS_DE_PAN_(38016386062).jpg" target="_blank" rel="noopener">photo</a> by Agencia de Noticias ANDES, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>, via Wikimedia Commons (resized)</li>
+      </ul>
+    </details>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Theme toggle (remembered per browser)
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch(e){}
+  if (saved) root.setAttribute('data-theme', saved);
+  document.getElementById('theme').addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark'
+             : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
+
+  // Mobile menu
+  var menu = document.getElementById('menu'), links = document.getElementById('links');
+  menu.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', open);
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){ links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Nav border on scroll
+  var nav = document.querySelector('.nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', scrollY > 8); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Live clocks: Samborondón + world cities, with difference from Samborondón
+  var HOME = 'America/Guayaquil';
+  var CITIES = [
+    ['New Delhi', 'Asia/Kolkata'], ['New York', 'America/New_York'], ['São Paulo', 'America/Sao_Paulo'],
+    ['Madrid', 'Europe/Madrid'], ['London', 'Europe/London'], ['Tokyo', 'Asia/Tokyo']
+  ];
+  function fmt(tz, opts){ return new Intl.DateTimeFormat('en-GB', Object.assign({timeZone:tz}, opts)).format(new Date()); }
+  function offset(tz){ // minutes from UTC
+    var d = new Date(), o = {};
+    new Intl.DateTimeFormat('en-US', {timeZone:tz, hourCycle:'h23', year:'numeric', month:'numeric', day:'numeric', hour:'numeric', minute:'numeric'})
+      .formatToParts(d).forEach(function(x){ o[x.type] = x.value; });
+    return Math.round((Date.UTC(o.year, o.month - 1, o.day, o.hour, o.minute) - d.getTime()) / 900000) * 15;
+  }
+  function hm(m, sign){
+    var a = Math.abs(m), h = Math.floor(a / 60), r = a % 60;
+    return (sign ? (m < 0 ? '−' : '+') : '') + h + (r ? ':' + String(r).padStart(2, '0') : '') + (sign ? ' h' : '');
+  }
+  var world = document.getElementById('world');
+  try {
+    CITIES.forEach(function(c){
+      var el = document.createElement('div'); el.className = 'city';
+      el.innerHTML = '<small></small><b>--:--</b><span></span>';
+      el.firstChild.textContent = c[0];
+      world.appendChild(el); c.push(el);
+    });
+  } catch(e){}
+  function tick(){
+    var t = {hour:'2-digit', minute:'2-digit', hour12:false}, home = offset(HOME);
+    document.getElementById('t-home').textContent = fmt(HOME, t);
+    document.getElementById('d-home').textContent = fmt(HOME, {weekday:'short', day:'numeric', month:'short'}) + ' · UTC' + (home < 0 ? '−' : '+') + hm(home);
+    CITIES.forEach(function(c){
+      if (!c[2]) return;
+      var diff = offset(c[1]) - home;
+      c[2].children[1].textContent = fmt(c[1], t);
+      c[2].children[2].textContent = diff === 0 ? 'same time' : hm(diff, true);
+    });
+  }
+  try { tick(); setInterval(tick, 15000); } catch(e){}
+
+  // Reveal on scroll + active nav link
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+
+    var navLinks = {};
+    links.querySelectorAll('a').forEach(function(a){ navLinks[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var a = navLinks[en.target.id === 'regions' ? 'ecuador' : en.target.id];
+        if (a && en.isIntersecting){
+          Object.keys(navLinks).forEach(function(k){ navLinks[k].classList.remove('active'); });
+          a.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){ spy.observe(s); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
