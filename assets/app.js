@@ -75,7 +75,8 @@
     const el = $('#stats');
     const s = (site && site.stats) || {};
     const items = [[new Date().getFullYear() - 2019, t('stats.years')]];
-    if (s.activities) items.push([s.activities, t('stats.activities')]);
+    // Más de 50 proyectos antes de usar la hoja; si la hoja supera ese número, se usa el de la hoja
+    items.push([(s.activities || 0) > 50 ? s.activities : (lang === 'en' ? '50+' : '+50'), t('stats.projects')]);
     if (s.volunteers) items.push([s.volunteers, t('stats.volunteers')]);
     if (s.beneficiaries) items.push([s.beneficiaries, t('stats.beneficiaries')]);
     if (s.hours) items.push([s.hours, t('stats.hours')]);
