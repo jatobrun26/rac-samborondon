@@ -60,7 +60,8 @@ apiUrl: 'https://script.google.com/macros/s/XXXXXXXX/exec',
 ```
 
 Guarda, haz commit y push a `main`. GitHub Pages publica solo en 1–2 minutos en
-https://jatobrun26.github.io/rac-samborondon/
+https://rotaractsamborondon.org (dominio propio, comprado en Cloudflare; el archivo `CNAME`
+de la raíz le dice a GitHub cuál es. Los registros DNS deben estar en "DNS only", nube gris).
 
 Mientras `apiUrl` esté vacío, la página muestra datos de ejemplo y los formularios
 no envían nada (sirve para probar el diseño).
