@@ -74,7 +74,7 @@
   function renderStats() {
     const el = $('#stats');
     const s = (site && site.stats) || {};
-    const items = [[new Date().getFullYear() - 2020, t('stats.years')]];
+    const items = [[new Date().getFullYear() - 2019, t('stats.years')]];
     if (s.activities) items.push([s.activities, t('stats.activities')]);
     if (s.volunteers) items.push([s.volunteers, t('stats.volunteers')]);
     if (s.beneficiaries) items.push([s.beneficiaries, t('stats.beneficiaries')]);

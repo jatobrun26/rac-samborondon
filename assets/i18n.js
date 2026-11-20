@@ -19,7 +19,7 @@ window.RAC_I18N = {
     'hero.lede': 'Somos jóvenes líderes que se juntan para servir a la comunidad, hacer amigos y crecer. Súmate a una actividad, apoya una causa o escríbenos.',
     'hero.cta1': 'Ver actividades',
     'hero.cta2': 'Quiero donar',
-    'hero.badge': 'Desde 2020',
+    'hero.badge': 'Desde 2019',
 
     'stats.years': 'años de servicio',
     'contact.followers': '+1.000 seguidores',
@@ -59,7 +59,7 @@ window.RAC_I18N = {
 
     'about.eyebrow': 'Quiénes somos',
     'about.title': 'Rotaract Club Samborondón',
-    'about.p1': 'Rotaract es el programa de Rotary International para jóvenes que quieren cambiar su entorno. En Samborondón trabajamos desde 2020 en proyectos de servicio, compañerismo y desarrollo profesional.',
+    'about.p1': 'Rotaract es el programa de Rotary International para jóvenes que quieren cambiar su entorno. En Samborondón trabajamos desde 2019 en proyectos de servicio, compañerismo y desarrollo profesional.',
     'about.p2': 'Organizamos voluntariados, campañas y eventos junto a fundaciones, clubes Interact y Rotary, y otros clubes Rotaract del país.',
     'about.focus': 'Áreas de enfoque',
     'about.focus1': 'Educación',
@@ -134,7 +134,7 @@ window.RAC_I18N = {
 
     'nav.ecuador': 'Conoce Ecuador',
     'nav.home': 'Inicio',
-    'footer.blurb': 'Jóvenes líderes sirviendo a Samborondón desde 2020. Parte de Rotary International, Distrito 4400.',
+    'footer.blurb': 'Jóvenes líderes sirviendo a Samborondón desde 2019. Parte de Rotary International, Distrito 4400.',
     'footer.explore': 'Explora',
     'footer.contact': 'Contacto',
     'footer.place': 'Samborondón, Guayas · Ecuador',
@@ -164,7 +164,7 @@ window.RAC_I18N = {
     'hero.lede': 'We are young leaders who come together to serve our community, make friends and grow. Join an activity, support a cause or say hello.',
     'hero.cta1': 'See activities',
     'hero.cta2': 'I want to donate',
-    'hero.badge': 'Since 2020',
+    'hero.badge': 'Since 2019',
 
     'stats.years': 'years of service',
     'contact.followers': '1,000+ followers',
@@ -204,7 +204,7 @@ window.RAC_I18N = {
 
     'about.eyebrow': 'Who we are',
     'about.title': 'Rotaract Club Samborondón',
-    'about.p1': 'Rotaract is Rotary International’s program for young people who want to change their surroundings. In Samborondón we have worked since 2020 on service, fellowship and professional development projects.',
+    'about.p1': 'Rotaract is Rotary International’s program for young people who want to change their surroundings. In Samborondón we have worked since 2019 on service, fellowship and professional development projects.',
     'about.p2': 'We run volunteering days, campaigns and events with foundations, Interact and Rotary clubs, and other Rotaract clubs across Ecuador.',
     'about.focus': 'Focus areas',
     'about.focus1': 'Education',
@@ -279,7 +279,7 @@ window.RAC_I18N = {
 
     'nav.ecuador': 'Discover Ecuador',
     'nav.home': 'Home',
-    'footer.blurb': 'Young leaders serving Samborondón since 2020. Part of Rotary International, District 4400.',
+    'footer.blurb': 'Young leaders serving Samborondón since 2019. Part of Rotary International, District 4400.',
     'footer.explore': 'Explore',
     'footer.contact': 'Contact',
     'footer.place': 'Samborondón, Guayas · Ecuador',
