@@ -68,7 +68,7 @@ desde la hoja y diseño propio a la vez.
 
 1. **Inicio (hero):** nombre del club, distrito 4400, lema, botones
    "Inscríbete" y "Dona".
-2. **Quiénes somos:** datos del club (fundado 2019, socios, áreas de
+2. **Quiénes somos:** datos del club (fundado 2020, socios, áreas de
    enfoque) y directorio (contenido existente).
 3. **Actividades:** tarjetas desde la hoja: título, fecha, lugar,
    descripción, imagen opcional, barra de cupos, botón "Inscribirme".
