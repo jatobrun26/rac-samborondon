@@ -297,7 +297,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
 /* Botón "Conoce Ecuador" en el menú */
 .links a.nav-pill { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); color: var(--ink); font-weight: 600; }
 .links a.nav-pill:hover, .links a.nav-pill.active { border-color: var(--cranberry); background: var(--cranberry-soft); color: var(--cranberry); }
-.flag { width: 20px; height: 14px; border-radius: 3px; stroke: none; box-shadow: 0 0 0 1px rgba(0, 0, 0, .08); }
+.flag { width: 24px; height: 16px; flex: none; border-radius: 3px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0, 0, 0, .12); }
 @media (max-width: 1080px) { .links a.nav-pill { justify-content: flex-start; margin-top: 4px; } }
 
 /* Aparición */
